@@ -4,6 +4,7 @@ import Parser from 'body-parser'
 // import Multer from 'multer'
 import ErrorHandler from 'errorhandler'
 import ResponseTime from 'response-time'
+import coffee from './coffee'
 
 
 const port = process.env.PORT || 3000
@@ -19,5 +20,8 @@ if (ENV === 'development') {
 
 app.get('/', (req, res) => res.send('Hello World'))
 
+app.use('/coffee', coffee)
+
 app.listen(port, () => console.log(`Server started at: http://localhost:${port}`))
 
+export default app
